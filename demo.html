@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue实例</title>
+    <script src="../VueDemo/dist/vue.js"></script>
+</head>
+<body>
+    <script>
+        // var data = {a:1,b:2,c:3}
+        // var vm = new Vue({
+        //     data:data
+        // });
+        // vm.a=3;
+        // vm.b=2;
+        // vm.c=1;
+        var vm = new Vue({
+            newTodoText:'',
+            visitCount:0,
+            hideCompletedTodos:false,
+            todos:[],
+            error:null
+        });
+    </script>
+</body>
+</html>
