@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用v-if，v-show，v-for指令</title>
+    <script src="../VueDemo/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div v-if="show">hello</div><!--是将此div标签删除掉，性能不怎么好，显示频率不怎大的时候使用-->
+        <div v-show="show">world</div><!--是将此div标签付为属性display：none，性能比较好-->
+        <button @click="handleClick">toggle</button>
+        <ul>
+            <!--key值不能重复-->
+            <li v-for="(item, index) of list" :key="index" :title="item">{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                show: true,
+                list:[1,2,3]
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show
+                }
+            }
+        });    
+    </script>
+</body>
+
+</html>
